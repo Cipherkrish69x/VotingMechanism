@@ -60,9 +60,6 @@ After deployment, you’ll receive a transaction hash confirming that the contra
 **Deployment Output:**
 Contract deployed successfully at address: 0xYourContractAddress
 
-css
-Copy code
-
 ### 2. Casting a Vote
 
 To cast a vote, a user sends Ether to the contract for the candidate they want to vote for. For example, let’s assume a user wants to vote for a candidate with the address `0x123456...` by sending 1 Ether.
@@ -70,21 +67,12 @@ To cast a vote, a user sends Ether to the contract for the candidate they want t
 **Voting Transaction:**
 Transaction successful: From: 0xUserAddress To: 0xYourContractAddress Value: 1 Ether Function Call: castVote(0x123456...)
 
-kotlin
-Copy code
-
 After this transaction, the contract updates the candidate’s vote count:
 
 Votes for candidate 0x123456...: 1 Ether
 
-markdown
-Copy code
-
 **Event Emitted:**
 VoteCast(address indexed candidate): 0x123456...
-
-arduino
-Copy code
 
 ### 3. Pausing Voting
 
@@ -92,26 +80,17 @@ The owner can pause the voting process to prevent any further voting. This could
 
 **Pausing Voting Transaction:**
 Transaction successful: From: 0xOwnerAddress To: 0xYourContractAddress Function Call: pauseVoting()
-
-perl
-Copy code
-
+ 
 After the transaction, the `votingPaused` state is updated to `true`:
 
 Voting Paused: true
-
-vbnet
-Copy code
 
 ### 4. Attempting to Vote During Pause
 
 If a user tries to vote while the contract is paused, the transaction will fail. The error message returned will be:
 
 Transaction failed: Error: Voting has been temporarily halted
-
-vbnet
-Copy code
-
+ 
 ### 5. Resuming Voting
 
 Once the issue is resolved, the owner can resume the voting process by calling the `resumeVoting()` function. This function checks that voting was paused before allowing it to resume.
@@ -119,15 +98,9 @@ Once the issue is resolved, the owner can resume the voting process by calling t
 **Resuming Voting Transaction:**
 Transaction successful: From: 0xOwnerAddress To: 0xYourContractAddress Function Call: resumeVoting()
 
-perl
-Copy code
-
 After the transaction, the `votingPaused` state is updated to `false`:
 
 Voting Paused: false
-
-mathematica
-Copy code
 
 ### 6. Casting a Vote After Resumption
 
@@ -136,21 +109,12 @@ Once voting has resumed, users can again cast their votes for candidates. For ex
 **Voting Transaction After Resumption:**
 Transaction successful: From: 0xUserAddress To: 0xYourContractAddress Value: 1 Ether Function Call: castVote(0x123456...)
 
-kotlin
-Copy code
-
 After this transaction, the candidate’s vote count will be updated:
 
 Votes for candidate 0x123456...: 2 Ether
 
-markdown
-Copy code
-
 **Event Emitted:**
 VoteCast(address indexed candidate): 0x123456...
-
-yaml
-Copy code
 
 ### 7. Final State
 
