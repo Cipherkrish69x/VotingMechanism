@@ -1,4 +1,4 @@
-## Voting Mechanism Smart Contract by ALLA KRISHNA VAMSI REDDY
+## Hi ra vamsi
 
 ## Overview
 The **Voting Mechanism Smart Contract** implements a decentralized, secure voting system on the Ethereum blockchain. In this system, users can cast their votes by sending Ether to a candidate's address. The contract ensures the secure tracking of votes, where each vote corresponds to a monetary contribution to the candidate. Additionally, the contract includes a mechanism that allows the owner to pause all functions of the contract, which can be later resumed when it is safe to do so. This design prioritizes emergency halts, giving the contract owner full control over the voting process.
